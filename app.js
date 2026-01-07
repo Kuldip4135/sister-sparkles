@@ -324,6 +324,7 @@ class JewelleryGridManager {
                             data-item-id="${jewellery.id}"
                             data-item-name="${jewellery.name}"
                             data-image-src="${jewellery.imageSrc}"
+                             data-netlify-src="${jewellery.netlifyImageUrl}" 
                         >
                             <i class="fab fa-whatsapp"></i>
                             <span class="font-heading">Buy on WhatsApp</span>
@@ -352,14 +353,11 @@ class JewelleryGridManager {
    * Handle WhatsApp button click
    * @param {HTMLElement} button - Clicked button
    */
-  /**
-   * Handle WhatsApp button click with image sharing
-   * @param {HTMLElement} button - Clicked button
-   */
   handleWhatsAppClick(button) {
     const itemId = button.dataset.itemId;
     const itemName = button.dataset.itemName;
-    const imageSrc = button.dataset.imageSrc;
+    const localImageSrc = button.dataset.imageSrc; // Local for display
+    const netlifyImageUrl = `https://sister-sparkles.netlify.app/images/jewel-${itemId}.jpg`;
 
     // Use existing modal if available
     const buyNowModal = document.getElementById("buyNowModal");
@@ -368,58 +366,29 @@ class JewelleryGridManager {
     const modalWhatsappLink = document.getElementById("modalWhatsappLink");
 
     if (buyNowModal && modalItem && modalImage && modalWhatsappLink) {
-      const jewellery = new JewelleryItem(parseInt(itemId));
+      // Get jewellery name from the dataset or use default
+      const displayName = itemName || `Jewellery Item ${itemId}`;
 
-      modalItem.textContent = "Jewellery";
-      modalImage.src = imageSrc;
-      modalImage.alt = "Jewellery";
+      // Show local image in modal
+      modalItem.textContent = displayName;
+      modalImage.src = localImageSrc; // LOCAL image in modal
+      modalImage.alt = displayName;
 
-      // Generate WhatsApp message with image reference
-      const message = this.generateWhatsAppMessage(jewellery, imageSrc);
-      modalWhatsappLink.href = `https://wa.me/917436053004?text=${encodeURIComponent(
+      // Generate WhatsApp message WITH NETLIFY URL
+      const message = `Hi Sisters Sparkles! \n\nI'm interested in buying this jewellery from your exhibition:\n\n *${displayName}*\n *Image:* ${netlifyImageUrl}\n *Item #${itemId}*\n\nPlease share price and availability. Thank you!`;
+
+      // Create WhatsApp URL
+      const whatsappUrl = `https://wa.me/917436053004?text=${encodeURIComponent(
         message
       )}`;
 
+      // Set the href for the modal WhatsApp button
+      modalWhatsappLink.href = whatsappUrl;
+
+      // Show modal
       buyNowModal.classList.remove("hidden");
       document.body.style.overflow = "hidden";
-    } else {
-      // Fallback: open WhatsApp directly with image reference
-      const jewellery = new JewelleryItem(parseInt(itemId));
-      const message = this.generateWhatsAppMessage(jewellery, imageSrc);
-      const url = `https://wa.me/917436053004?text=${encodeURIComponent(
-        message
-      )}`;
-      window.open(url, "_blank");
     }
-  }
-
-  /**
-   * Generate WhatsApp message that includes image reference
-   * @param {JewelleryItem} jewellery - Jewellery item
-   * @param {string} imageSrc - Image URL
-   * @returns {string} Formatted WhatsApp message
-   */
-  generateWhatsAppMessage(jewellery, imageSrc) {
-    // Create a descriptive message with image reference
-    const messageLines = [
-      `Hi Sisters Sparkles! 👋`,
-      ``,
-      `I'm interested in buying this jewellery:`,
-      `• Item: ${jewellery.name}`,
-      `• Reference: Item #${jewellery.id}`,
-      ``,
-      `You can view the image here: ${imageSrc}`,
-      ``,
-      `Please share details about:`,
-      `✅ Price`,
-      `✅ Available sizes`,
-      `✅ Exhibition availability`,
-      `✅ Any special offers`,
-      ``,
-      `Thank you! 🙏`,
-    ];
-
-    return messageLines.join("\n");
   }
 
   /**
