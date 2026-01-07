@@ -8,7 +8,7 @@ const JEWELLERY_CONFIG = {
   BASE_PATH: "images/",
   IMAGE_PREFIX: "jewel-",
   TOTAL_IMAGES: 36,
-  INITIAL_LOAD: 12,
+  INITIAL_LOAD: 8,
   BATCH_SIZE: 8,
   FALLBACK_IMAGES: [
     "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
