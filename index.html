@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Sisters Sparkles | Brass & Antique Jewellery | Ahmedabad Exhibition
+    </title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#db5388",
+              secondary: "#ff6ba6",
+              dark: "#5a1c3d",
+              light: "#fff5f9",
+              accent: "#ffbed4",
+              "light-bg": "#fffafc",
+              whatsapp: "#25D366",
+              "whatsapp-dark": "#128C7E",
+              instagram: "#E4405F",
+            },
+            fontFamily: {
+              // New font combination - More elegant and modern
+              "display-font": ["Lora", "serif"], // Main headings - elegant serif
+              "heading-font": ["Poppins", "sans-serif"], // Subheadings - clean sans-serif
+              "body-font": ["Open Sans", "sans-serif"], // Body text - highly readable
+              "accent-font": ["Dancing Script", "cursive"], // Special accents
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "pulse-slow": "pulse 3s ease-in-out infinite",
+              "fade-in": "fadeIn 0.8s ease-out",
+              "slide-up": "slideUp 0.8s ease-out",
+              "slide-in-left": "slideInLeft 0.8s ease-out",
+              "slide-in-right": "slideInRight 0.8s ease-out",
+              "scale-in": "scaleIn 0.6s ease-out",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              slideUp: {
+                "0%": { opacity: "0", transform: "translateY(30px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              slideInLeft: {
+                "0%": { opacity: "0", transform: "translateX(-30px)" },
+                "100%": { opacity: "1", transform: "translateX(0)" },
+              },
+              slideInRight: {
+                "0%": { opacity: "0", transform: "translateX(30px)" },
+                "100%": { opacity: "1", transform: "translateX(0)" },
+              },
+              scaleIn: {
+                "0%": { opacity: "0", transform: "scale(0.9)" },
+                "100%": { opacity: "1", transform: "scale(1)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Google Fonts CDN - New Font Combination -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #fff;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      /* Apply font variables consistently */
+      .display-font {
+        font-family: "Lora", serif;
+        font-weight: 600;
+        letter-spacing: -0.3px;
+      }
+
+      .heading-font {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.2px;
+      }
+
+      .body-font {
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .accent-font {
+        font-family: "Dancing Script", cursive;
+        font-weight: 600;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #ffeaf2;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #db5388;
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ff6ba6;
+      }
+
+      /* Card Hover Effects */
+      .jewellery-card {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .jewellery-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(219, 83, 136, 0.15);
+      }
+
+      .jewellery-card:hover .card-image {
+        transform: scale(1.08);
+      }
+
+      .card-image {
+        transition: transform 0.7s ease;
+      }
+
+      /* UPDATED Buy Now Button - Matching Brand Colors */
+      .whatsapp-btn {
+        background: linear-gradient(
+          135deg,
+          #db5388 0%,
+          #ff6ba6 100%
+        ) !important;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        position: relative;
+        overflow: hidden;
+        color: white !important;
+        font-weight: 600 !important;
+        border: none !important;
+      }
+
+      .whatsapp-btn:hover {
+        background: linear-gradient(
+          135deg,
+          #c94278 0%,
+          #e85a94 100%
+        ) !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 12px 25px rgba(219, 83, 136, 0.3) !important;
+      }
+
+      /* WhatsApp Icon Color */
+      .whatsapp-btn i.fa-whatsapp {
+        color: white !important;
+      }
+
+      /* Fixed WhatsApp Button */
+      .fixed-whatsapp-btn {
+        background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .fixed-whatsapp-btn:hover {
+        background: linear-gradient(135deg, #1da851 0%, #0f7a5f 100%);
+        transform: scale(1.1);
+        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+      }
+
+      /* Exhibition Banner */
+      .exhibition-banner {
+        background: linear-gradient(135deg, #db5388 0%, #ff6ba6 100%);
+        animation: pulse-slow 3s infinite;
+      }
+
+      /* NEW: Exhibition Countdown Banner */
+      .exhibition-countdown-banner {
+        background: linear-gradient(
+          135deg,
+          #ff6ba6 0%,
+          #ffbed4 50%,
+          #ff6ba6 100%
+        );
+        border: 2px solid #ffbed4;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(219, 83, 136, 0.15);
+      }
+
+      .exhibition-countdown-banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        animation: shimmer 3s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      /* Gift Banner with Ribbon Effect */
+      .gift-banner {
+        background: linear-gradient(135deg, #fff5f9 0%, #fff 50%, #fff5f9 100%);
+        border: 2px solid #ffbed4;
+        border-left: 6px solid #db5388;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(219, 83, 136, 0.1);
+      }
+
+      .gift-banner .ribbon {
+        position: absolute;
+        top: 10px;
+        right: -30px;
+        background: #db5388;
+        color: white;
+        padding: 5px 40px;
+        transform: rotate(45deg);
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      /* Responsive Headings */
+      @media (max-width: 640px) {
+        .responsive-heading {
+          font-size: 2rem !important;
+          line-height: 2.5rem !important;
+        }
+
+        .responsive-subheading {
+          font-size: 1.1rem !important;
+          line-height: 1.6rem !important;
+        }
+
+        .display-font {
+          font-size: 2.2rem !important;
+          letter-spacing: -0.3px !important;
+        }
+      }
+
+      /* Scroll Reveal Animations */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-left {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+      }
+
+      .reveal-left.active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .reveal-right {
+        opacity: 0;
+        transform: translateX(30px);
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+      }
+
+      .reveal-right.active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .reveal-scale {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+      }
+
+      .reveal-scale.active {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* Gradient Text */
+      .gradient-text {
+        background: linear-gradient(135deg, #db5388, #ff6ba6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Improved Contrast */
+      .high-contrast-text {
+        color: #2d1b25 !important;
+      }
+
+      .medium-contrast-text {
+        color: #4a2c3d !important;
+      }
+
+      /* Better Button Contrast */
+      .cta-button {
+        background: linear-gradient(135deg, #db5388, #ff6ba6);
+        color: white !important;
+        font-weight: 600;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .cta-button:hover {
+        background: linear-gradient(135deg, #c94278, #e85a94);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 25px rgba(219, 83, 136, 0.25);
+      }
+
+      /* Contact Section Styles */
+      .contact-card {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(219, 83, 136, 0.15);
+      }
+
+      .contact-card.whatsapp-card {
+        background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        color: white;
+      }
+
+      .contact-card.whatsapp-card:hover {
+        box-shadow: 0 20px 40px rgba(37, 211, 102, 0.2);
+      }
+
+      .contact-card.phone-card {
+        background: linear-gradient(135deg, #db5388 0%, #ff6ba6 100%);
+        color: white;
+      }
+
+      .contact-card.instagram-card {
+        background: linear-gradient(135deg, #e4405f 0%, #c13584 100%);
+        color: white;
+      }
+
+      /* Instagram Icon Animation */
+      .instagram-icon {
+        background: radial-gradient(
+          circle at 30% 107%,
+          #fdf497 0%,
+          #fdf497 5%,
+          #fd5949 45%,
+          #d6249f 60%,
+          #285aeb 90%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Buy Now Button Shine Effect */
+      .whatsapp-btn::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -60%;
+        width: 20%;
+        height: 200%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(30deg);
+        transition: all 0.6s ease;
+      }
+
+      .whatsapp-btn:hover::after {
+        left: 140%;
+      }
+
+      /* NEW: Exhibition Info Cards */
+      .exhibition-info-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.4s ease;
+        border: 2px solid #ffeaf2;
+      }
+
+      .exhibition-info-card:hover {
+        transform: translateY(-5px);
+        border-color: #ff6ba6;
+        box-shadow: 0 15px 30px rgba(219, 83, 136, 0.1);
+      }
+
+      .exhibition-info-card .icon-wrapper {
+        background: linear-gradient(135deg, #db5388, #ff6ba6);
+        width: 60px;
+        height: 60px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .exhibition-info-card .icon-wrapper i {
+        color: white;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body class="bg-white font-body">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full z-40 bg-white/95 backdrop-blur-sm py-4 px-6 shadow-sm reveal"
+    >
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-3 group">
+          <div
+            class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform duration-300"
+          >
+            <i class="fas fa-gem text-white"></i>
+          </div>
+          <div>
+            <h1 class="display-font text-2xl high-contrast-text">
+              Sisters <span class="text-primary">Sparkles</span>
+            </h1>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8 reveal-right">
+          <a
+            href="#collection"
+            class="font-heading font-medium medium-contrast-text hover:text-primary transition-colors duration-300"
+            >Collection</a
+          >
+          <a
+            href="#exhibition"
+            class="font-heading font-medium medium-contrast-text hover:text-primary transition-colors duration-300"
+            >Exhibition</a
+          >
+          <a
+            href="#contact"
+            class="font-heading font-medium medium-contrast-text hover:text-primary transition-colors duration-300"
+            >Contact Us</a
+          >
+          <a
+            href="https://maps.app.goo.gl/ej3nhLYK9pMEb8Hf6"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-button font-heading px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300"
+          >
+            Get Directions
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden medium-contrast-text text-2xl"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="absolute top-full left-0 w-full bg-white shadow-lg md:hidden hidden transform transition-all duration-300"
+      >
+        <div class="flex flex-col space-y-4 p-6">
+          <a
+            href="#collection"
+            class="font-heading font-medium medium-contrast-text hover:text-primary transition-colors duration-300 py-2"
+            >Collection</a
+          >
+          <a
+            href="#exhibition"
+            class="font-heading font-medium medium-contrast-text hover:text-primary transition-colors duration-300 py-2"
+            >Exhibition</a
+          >
+          <a
+            href="#contact"
+            class="font-heading font-medium medium-contrast-text hover:text-primary transition-colors duration-300 py-2"
+            >Contact Us</a
+          >
+          <a
+            href="https://maps.app.goo.gl/RBGHoHxWUTmHugAN8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-button font-heading px-6 py-3 rounded-full text-center mt-4"
+            >Get Directions</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-12 px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <h1
+            class="responsive-heading display-font text-4xl md:text-5xl high-contrast-text mb-6 reveal"
+          >
+            Exquisite
+            <span class="gradient-text">Brass & Antique</span> Jewellery
+          </h1>
+
+          <p
+            class="responsive-subheading text-xl medium-contrast-text max-w-3xl mx-auto mb-10 reveal"
+          >
+            Beautiful traditional pieces at our Ahmedabad exhibition. Limited
+            time offer!
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
+            <a
+              href="#collection"
+              class="cta-button font-heading px-8 py-3 rounded-full font-medium text-center"
+            >
+              View Collection
+            </a>
+            <a
+              href="#exhibition"
+              class="border-2 border-primary text-primary px-8 py-3 rounded-full font-heading font-medium hover:bg-primary/10 transition-colors duration-300 text-center"
+            >
+              Exhibition Details
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Image Grid -->
+        <!-- Hero Image Grid - FIXED -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+          <div
+            class="col-span-2 row-span-2 rounded-xl overflow-hidden shadow-lg reveal-left"
+          >
+            <img
+              src="./images/jewel-1.jpg"
+              alt="Jewellery Collection"
+              class="w-full h-full object-cover min-h-[320px] md:min-h-[400px]"
+            />
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-lg reveal-scale">
+            <img
+              src="./images/jewel-13.jpg"
+              alt="Brass Jewellery"
+              class="w-full h-full object-cover min-h-[160px] md:min-h-[200px]"
+            />
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-lg reveal-scale">
+            <img
+              src="./images/jewel-15.jpg"
+              alt="Antique Jewellery"
+              class="w-full h-full object-cover min-h-[160px] md:min-h-[200px]"
+            />
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-lg reveal-right">
+            <img
+              src="./images/jewel-25.jpg"
+              alt="Traditional Jewellery"
+              class="w-full h-full object-cover min-h-[160px] md:min-h-[200px]"
+            />
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-lg reveal-left">
+            <img
+              src="./images/jewel-30.jpg"
+              alt="Bridal Jewellery"
+              class="w-full h-full object-cover min-h-[160px] md:min-h-[200px]"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exhibition Countdown Banner (Moved Below Hero) -->
+    <section class="py-8 px-6 reveal">
+      <div class="max-w-7xl mx-auto">
+        <div class="exhibition-countdown-banner p-6 md:p-8 rounded-2xl">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-4 mb-4 md:mb-0">
+              <div
+                class="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center"
+              >
+                <i class="fas fa-calendar-alt text-white text-2xl"></i>
+              </div>
+              <div>
+                <p class="font-heading font-bold text-xl text-white mb-1">
+                  Exhibition Coming Soon!
+                </p>
+                <p class="text-white/90 font-heading" id="countdownText">
+                  3 days to go | 9-11 Jan 2026
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-clock text-white text-xl"></i>
+              <span class="text-white font-heading font-bold text-lg"
+                >7:00 PM – 11:00 PM</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gift Section (Moved Below Hero) -->
+    <section class="py-8 px-6 reveal-scale">
+      <div class="max-w-7xl mx-auto">
+        <div class="gift-banner p-6 md:p-8 rounded-2xl relative">
+          <div class="ribbon">EXCLUSIVE</div>
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-4 mb-4 md:mb-0">
+              <div
+                class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center"
+              >
+                <i class="fas fa-gift text-primary text-2xl"></i>
+              </div>
+              <div>
+                <p
+                  class="font-heading font-bold text-xl high-contrast-text mb-1"
+                >
+                  🎁 Exclusive Gifts on Exhibition Purchase!
+                </p>
+                <p class="text-sm medium-contrast-text">
+                  *Valid till 11th Jan 2026
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-tag text-primary text-xl"></i>
+              <span class="text-primary font-heading font-bold text-lg"
+                >Limited Time Offer</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection" class="py-16 bg-light-bg px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <h2
+            class="responsive-heading display-font text-3xl md:text-4xl high-contrast-text mb-6"
+          >
+            Our <span class="gradient-text">Jewellery</span> Collection
+          </h2>
+          <p class="medium-contrast-text max-w-2xl mx-auto">
+            Brass and antique jewellery. All pieces available at our exhibition.
+          </p>
+        </div>
+
+        <!-- Jewellery Grid - Dynamic -->
+        <div
+          id="jewelleryGrid"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <!-- Dynamic content will be loaded by JavaScript -->
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" class="text-center mt-8">
+          <div
+            class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"
+          ></div>
+          <p class="mt-2 text-gray-600">Loading jewellery...</p>
+        </div>
+
+        <!-- View More Button (Initially hidden) -->
+        <div id="viewMoreContainer" class="text-center mt-12 reveal hidden">
+          <button
+            id="viewMoreBtn"
+            class="border-2 border-primary text-primary px-8 py-3 rounded-full font-heading font-medium hover:bg-primary hover:text-white transition-colors duration-300"
+          >
+            View More Jewellery
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exhibition Section - Redesigned -->
+    <section id="exhibition" class="py-16 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <h2
+            class="responsive-heading display-font text-3xl md:text-4xl high-contrast-text mb-6"
+          >
+            Visit Our <span class="gradient-text">Exhibition</span>
+          </h2>
+          <p class="medium-contrast-text max-w-2xl mx-auto">
+            Experience our exclusive collection in person at our Ahmedabad
+            exhibition
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <!-- Date Card -->
+          <div class="exhibition-info-card p-8 reveal-left">
+            <div class="icon-wrapper">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3 class="font-heading font-bold text-2xl high-contrast-text mb-4">
+              Exhibition Dates
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-calendar-day text-primary text-xl"></i>
+                <div>
+                  <p class="font-heading font-bold text-lg">
+                    9th – 11th January 2026
+                  </p>
+                  <p class="text-gray-600">Three exclusive evenings</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-clock text-primary text-xl"></i>
+                <div>
+                  <p class="font-heading font-bold text-lg">
+                    7:00 PM – 11:00 PM
+                  </p>
+                  <p class="text-gray-600">Each evening</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location Card -->
+          <div class="exhibition-info-card p-8 reveal-right">
+            <div class="icon-wrapper">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3 class="font-heading font-bold text-2xl high-contrast-text mb-4">
+              Location
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-store text-primary text-xl"></i>
+                <div>
+                  <p class="font-heading font-bold text-lg">
+                    Freezbee, Ahmedabad
+                  </p>
+                  <p class="text-gray-600">
+                    opp. Tea Post, near Hotel Taj Skyline, Frizbee, Bodakdev,
+                    Ahmedabad, Gujarat 380059
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-directions text-primary text-xl"></i>
+                <div>
+                  <p class="font-heading font-semibold">
+                    Easy to reach location
+                  </p>
+                  <p class="text-gray-600">Ample parking available</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Directions Button -->
+        <div class="text-center reveal">
+          <a
+            href="https://maps.google.com/?q=Freezbee+Ahmedabad"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-3 cta-button px-8 py-4 rounded-full font-heading font-bold text-lg"
+          >
+            <i class="fas fa-map-pin"></i>
+            <span>Get Directions to Exhibition</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-light-bg px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <h2
+            class="responsive-heading display-font text-3xl md:text-4xl high-contrast-text mb-6"
+          >
+            Connect With <span class="gradient-text">Us</span>
+          </h2>
+          <p class="medium-contrast-text max-w-2xl mx-auto">
+            Have questions? Get in touch with us through any of these channels.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-8xl mx-auto">
+          <!-- WhatsApp Card -->
+          <div class="contact-card whatsapp-card reveal-left">
+            <div class="p-8">
+              <div
+                class="w-20 h-20 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-6"
+              >
+                <i class="fab fa-whatsapp text-white text-3xl"></i>
+              </div>
+              <h3 class="font-heading font-bold text-2xl text-center mb-4">
+                WhatsApp
+              </h3>
+              <p class="text-center mb-6 opacity-90">
+                Fastest way to connect. Send us a message for quick response.
+              </p>
+              <div class="space-y-4">
+                <a
+                  href="https://wa.me/917036053004"
+                  target="_blank"
+                  class="block bg-white text-whatsapp-dark px-6 py-3 rounded-xl font-heading font-bold text-lg text-center hover:bg-gray-50 transition-colors duration-300"
+                >
+                  <i class="fab fa-whatsapp mr-2"></i>Message Now
+                </a>
+                <div class="text-center text-white/80 text-sm">
+                  <i class="fas fa-clock mr-1"></i>Response within minutes
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="contact-card phone-card reveal-scale">
+            <div class="p-8">
+              <div
+                class="w-20 h-20 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-6"
+              >
+                <i class="fas fa-phone-alt text-white text-3xl"></i>
+              </div>
+              <h3 class="font-heading font-bold text-2xl text-center mb-4">
+                Call Us
+              </h3>
+              <p class="text-center mb-6 opacity-90">
+                Speak directly with us for detailed inquiries.
+              </p>
+              <div class="space-y-4">
+                <a
+                  href="tel:+919876543210"
+                  class="block bg-white text-primary px-6 py-3 rounded-xl font-heading font-bold text-lg text-center hover:bg-gray-50 transition-colors duration-300"
+                >
+                  <i class="fas fa-phone-alt mr-2"></i>+91 70360 53004
+                </a>
+                <div class="text-center text-white/80 text-sm">
+                  <i class="fas fa-clock mr-1"></i>10 AM - 8 PM Daily
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Instagram Card -->
+          <div class="contact-card instagram-card reveal-right">
+            <div class="p-8">
+              <div
+                class="w-20 h-20 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-6"
+              >
+                <i class="fab fa-instagram text-white text-3xl"></i>
+              </div>
+              <h3 class="font-heading font-bold text-2xl text-center mb-4">
+                Instagram
+              </h3>
+              <p class="text-center mb-6 opacity-90">
+                Follow us for latest collection updates and exhibition photos.
+              </p>
+              <div class="space-y-4">
+                <a
+                  href="https://www.instagram.com/sisters_sparkles_?igsh=a252cjV1bzhxZXlz"
+                  target="_blank"
+                  class="block bg-white text-instagram px-6 py-3 rounded-xl font-heading font-bold text-lg text-center hover:bg-gray-50 transition-colors duration-300"
+                >
+                  <i class="fab fa-instagram mr-2"></i>Follow @SistersSparkles
+                </a>
+                <div class="text-center text-white/80 text-sm">
+                  <i class="fas fa-images mr-1"></i>See our latest jewellery
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 mb-8">
+          <!-- Brand Info -->
+          <div class="reveal-left">
+            <div class="flex items-center space-x-3 mb-6">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center"
+              >
+                <i class="fas fa-gem text-white"></i>
+              </div>
+              <h3 class="display-font text-2xl">
+                Sisters <span class="text-accent">Sparkles</span>
+              </h3>
+            </div>
+            <p class="text-gray-300 mb-8 max-w-md">
+              Brass and antique jewellery collection at our Ahmedabad
+              exhibition. Beautiful traditional pieces at best prices.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="reveal-right">
+            <h4 class="font-heading font-bold text-xl mb-6 text-accent">
+              Quick Links
+            </h4>
+            <div class="grid grid-cols-2 gap-4">
+              <a
+                href="#collection"
+                class="text-gray-300 hover:text-accent transition-colors duration-300 font-heading"
+                >Collection</a
+              >
+              <a
+                href="#exhibition"
+                class="text-gray-300 hover:text-accent transition-colors duration-300 font-heading"
+                >Exhibition</a
+              >
+              <a
+                href="#contact"
+                class="text-gray-300 hover:text-accent transition-colors duration-300 font-heading"
+                >Contact Us</a
+              >
+              <a
+                href="https://maps.app.goo.gl/ej3nhLYK9pMEb8Hf6"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-300 hover:text-accent transition-colors duration-300 font-heading"
+                >Get Directions</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-gray-700 reveal">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2026 Sisters Sparkles. All rights reserved.
+            </p>
+            <p class="text-gray-400 text-sm font-heading">
+              Exhibition: Freezbee, Ahmedabad | 9-11 Jan 2026 | 7-11 PM
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Fixed WhatsApp Button -->
+    <a
+      href="https://wa.me/919876543210"
+      target="_blank"
+      class="fixed-whatsapp-btn fixed bottom-8 right-8 w-14 h-14 rounded-full text-white flex items-center justify-center text-2xl shadow-2xl z-40"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Buy Now Modal -->
+    <div
+      id="buyNowModal"
+      class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-6 hidden"
+    >
+      <div class="bg-white rounded-2xl max-w-md w-full p-8 reveal-scale">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="font-heading font-bold text-2xl high-contrast-text">
+            Buy on WhatsApp
+          </h3>
+          <button
+            id="closeModal"
+            class="text-gray-500 hover:text-gray-700 text-2xl"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="mb-8">
+          <div class="flex items-center space-x-4 mb-6">
+            <div class="w-20 h-20 rounded-xl overflow-hidden">
+              <img
+                id="modalImage"
+                src=""
+                alt="Jewellery"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <p class="font-heading font-medium high-contrast-text">
+                You're buying:
+              </p>
+              <p
+                id="modalItem"
+                class="text-primary font-heading font-bold text-lg"
+              ></p>
+            </div>
+          </div>
+
+          <p class="medium-contrast-text mb-6">
+            We'll connect you on WhatsApp to complete your purchase.
+          </p>
+
+          <div class="bg-primary/10 p-4 rounded-xl mb-6">
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-gift text-primary"></i>
+              <p class="high-contrast-text font-heading font-medium">
+                Get exclusive gift when purchased from exhibition!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <a
+            id="modalWhatsappLink"
+            href="#"
+            target="_blank"
+            class="whatsapp-btn py-4 rounded-xl font-heading font-bold text-lg flex items-center justify-center space-x-3"
+          >
+            <i class="fab fa-whatsapp text-xl"></i>
+            <span>Open WhatsApp</span>
+          </a>
+          <button
+            id="modalCancel"
+            class="w-full py-4 rounded-xl border-2 border-gray-300 high-contrast-text font-heading font-medium hover:border-gray-400 transition-colors"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Custom Cursor Logic
+      const cursor = document.querySelector(".custom-cursor");
+
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+      });
+
+      // Add hover effect to interactive elements
+      const interactiveElements = document.querySelectorAll(
+        "a, button, .jewellery-card, .contact-card, .cta-button, .whatsapp-btn, input, textarea"
+      );
+
+      interactiveElements.forEach((el) => {
+        el.addEventListener("mouseenter", () => {
+          cursor.classList.add("hover");
+        });
+
+        el.addEventListener("mouseleave", () => {
+          cursor.classList.remove("hover");
+        });
+      });
+
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll("#mobileMenu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector("nav");
+        if (window.scrollY > 50) {
+          nav.classList.add("shadow-md");
+        } else {
+          nav.classList.remove("shadow-md");
+        }
+      });
+
+      // Exhibition Countdown Logic
+      function updateExhibitionCountdown() {
+        const exhibitionStart = new Date("January 9, 2026 19:00:00").getTime();
+        const now = new Date().getTime();
+        const countdownText = document.getElementById("countdownText");
+
+        // For testing: Uncomment below line to simulate different days
+        // const now = new Date('January 6, 2026').getTime(); // 3 days before
+        // const now = new Date('January 8, 2026 20:00:00').getTime(); // 1 day before
+        // const now = new Date('January 10, 2026 20:00:00').getTime(); // During exhibition
+        // const now = new Date('January 12, 2026').getTime(); // After exhibition
+
+        if (now < exhibitionStart) {
+          // Exhibition hasn't started yet
+          const daysUntil = Math.ceil(
+            (exhibitionStart - now) / (1000 * 60 * 60 * 24)
+          );
+          if (daysUntil === 1) {
+            countdownText.textContent = "1 day to go | 9-11 Jan 2026";
+          } else if (daysUntil === 0) {
+            countdownText.textContent = "Starting today! | 9-11 Jan 2026";
+          } else {
+            countdownText.textContent = `${daysUntil} days to go | 9-11 Jan 2026`;
+          }
+        } else if (
+          now >= exhibitionStart &&
+          now <= new Date("January 11, 2026 23:00:00").getTime()
+        ) {
+          // Exhibition is live
+          const exhibitionEnd = new Date("January 11, 2026 23:00:00").getTime();
+          const daysLeft = Math.ceil(
+            (exhibitionEnd - now) / (1000 * 60 * 60 * 24)
+          );
+
+          if (daysLeft === 0) {
+            countdownText.textContent = "Last day today! | 9-11 Jan 2026";
+          } else if (daysLeft === 1) {
+            countdownText.textContent = "1 day left | 9-11 Jan 2026";
+          } else {
+            countdownText.textContent = `${daysLeft} days left | 9-11 Jan 2026`;
+          }
+        } else {
+          // Exhibition has ended
+          countdownText.textContent =
+            "Exhibition ended | Thank you for visiting!";
+        }
+      }
+
+      // Initialize exhibition countdown
+      updateExhibitionCountdown();
+
+      // Buy Now Modal
+      const buyNowButtons = document.querySelectorAll(".whatsapp-btn");
+      const buyNowModal = document.getElementById("buyNowModal");
+      const closeModalBtn = document.getElementById("closeModal");
+      const modalCancelBtn = document.getElementById("modalCancel");
+      const modalItem = document.getElementById("modalItem");
+      const modalImage = document.getElementById("modalImage");
+      const modalWhatsappLink = document.getElementById("modalWhatsappLink");
+
+      buyNowButtons.forEach((button) => {
+        if (button.getAttribute("data-item")) {
+          button.addEventListener("click", () => {
+            const itemName = button.getAttribute("data-item");
+            const imageUrl =
+              button.getAttribute("data-image") ||
+              "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
+
+            modalItem.textContent = itemName;
+            modalImage.src = imageUrl;
+            modalImage.alt = itemName;
+
+            const message = `Hi Sisters Sparkles, I'm interested in buying ${itemName}. Please share details and price.`;
+            const encodedMessage = encodeURIComponent(message);
+            modalWhatsappLink.href = `https://wa.me/919876543210?text=${encodedMessage}`;
+
+            // Show modal
+            buyNowModal.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+          });
+        }
+      });
+
+      // Close modal functions
+      function closeModal() {
+        buyNowModal.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      closeModalBtn.addEventListener("click", closeModal);
+      modalCancelBtn.addEventListener("click", closeModal);
+
+      // Close modal when clicking outside
+      buyNowModal.addEventListener("click", (e) => {
+        if (e.target === buyNowModal) {
+          closeModal();
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+
+          // Skip if it's just "#" or if it's a WhatsApp link
+          if (href === "#" || href.includes("wa.me")) return;
+
+          e.preventDefault();
+
+          // Extract the ID from href (remove #)
+          const targetId = href.substring(1);
+          if (!targetId) return;
+
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            mobileMenu.classList.add("hidden");
+          }
+        });
+      });
+
+      // Scroll Reveal Animation
+      const revealElements = document.querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right, .reveal-scale"
+      );
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        }
+      );
+
+      revealElements.forEach((element) => {
+        revealObserver.observe(element);
+      });
+
+      // Initialize animations on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        // Add initial active class to elements in viewport
+        revealElements.forEach((element) => {
+          const rect = element.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100) {
+            element.classList.add("active");
+          }
+        });
+      });
+    </script>
+    <script src="./app.js"></script>
+  </body>
+</html>
